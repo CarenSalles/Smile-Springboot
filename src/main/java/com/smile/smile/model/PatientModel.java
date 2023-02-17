@@ -14,6 +14,10 @@ public class PatientModel {
 
     private String dniPatient;
 
+    public PatientModel(String dniPatient) {
+        this.dniPatient = dniPatient;
+    }
+
     public String getDniPatient() {
         return dniPatient;
     }

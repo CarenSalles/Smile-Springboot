@@ -1,0 +1,2 @@
+INSERT INTO Patients(dni) VALUES("12487B")
+INSERT INTO Patients(dni) VALUES("77777U")
