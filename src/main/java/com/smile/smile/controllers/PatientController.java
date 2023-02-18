@@ -25,8 +25,8 @@ public class PatientController {
     }
 
     @GetMapping("/{dni}")
-    public PatientModel listOne(@PathVariable String dniPatient) {
-        return service.getOne(dniPatient);
+    public PatientModel listOne(@PathVariable String dni) {
+        return service.getOne(dni);
 
     }
 

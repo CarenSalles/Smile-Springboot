@@ -20,8 +20,8 @@ public class PatientService {
         return repository.findAll();
     }
 
-    public PatientModel getOne(String dniPatient) {
-        return repository.findByDniPatient(dniPatient);
+    public PatientModel getOne(String dni) {
+        return repository.findByDni(dni);
 
     }
 }

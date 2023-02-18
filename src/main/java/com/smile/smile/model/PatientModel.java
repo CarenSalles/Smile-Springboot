@@ -11,19 +11,19 @@ public class PatientModel {
 
     @Id
     @Column(name = "dni")
-
-    private String dniPatient;
-
-    public PatientModel(String dniPatient) {
-        this.dniPatient = dniPatient;
+                                                                       
+    private String dni;
+    public PatientModel() {}
+    public PatientModel(String dni) {
+        this.dni = dni;
     }
 
     public String getDniPatient() {
-        return dniPatient;
+        return dni;
     }
 
-    public void setDniPatient(String dniPatient) {
-        this.dniPatient = dniPatient;
+    public void setDniPatient(String dni) {
+        this.dni = dni;
     }
 
 }
