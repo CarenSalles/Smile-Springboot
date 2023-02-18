@@ -25,6 +25,10 @@ public class TreatmentModel {
     @JoinColumn(name = "dni")
 
     private PatientModel patient;
+    
+
+    public TreatmentModel() {
+    }
 
     public TreatmentModel(Long id__treatment, PatientModel patient) {
         this.id__treatment = id__treatment;
