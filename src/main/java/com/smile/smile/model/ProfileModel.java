@@ -25,6 +25,8 @@ public class ProfileModel {
     private String adress;
     private String city;
 
+    public ProfileModel(){}
+    
     public ProfileModel(PatientModel dni, Long idProfile, String name, String surname, int phoneNumber, String adress,
             String city) {
         this.dni = dni;
