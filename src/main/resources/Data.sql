@@ -11,4 +11,3 @@ INSERT INTO treatments(id__treatments, dni) VALUES (2, "12487B")
 
 
 
---  public TreatmentModel(Long id__treatment, PatientModel patient)
