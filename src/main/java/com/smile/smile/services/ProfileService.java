@@ -9,7 +9,6 @@ import com.smile.smile.repositories.ProfileRepository;
 
 @Service
 public class ProfileService {
-    
 
     private ProfileRepository repository;
 
@@ -26,8 +25,12 @@ public class ProfileService {
     }
 
     // public PatientModel getOne(String dni) {
-    //     return repository.findByDni(dni);
+    // return repository.findByDni(dni);
 
     // }
-}
 
+    public ProfileModel save(ProfileModel profileModel) {
+        ProfileModel profileModelSaved = repository.save(profileModel);
+        return profileModelSaved;
+    }
+}
