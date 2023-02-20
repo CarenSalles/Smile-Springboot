@@ -24,4 +24,9 @@ public class PatientService {
         return repository.findByDni(dni);
 
     }
+
+    public PatientModel save(PatientModel patientModel) {
+        PatientModel patientModelSaved = repository.save(patientModel);
+        return patientModelSaved;
+    }
 }
