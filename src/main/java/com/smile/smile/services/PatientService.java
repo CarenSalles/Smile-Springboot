@@ -20,7 +20,7 @@ public class PatientService {
         return repository.findAll();
     }
 
-    public PatientModel getOne(String dni) {
+    public PatientModel findByDni(String dni) {
         return repository.findByDni(dni).orElse(null);
 
     }

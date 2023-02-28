@@ -33,14 +33,15 @@ public class PatientController {
     }
 
     @GetMapping("/{dni}")
-    public ResponseEntity<PatientModel> getByDni(@PathVariable String dni) {
-        PatientModel patient = service.getOne(dni);
+    public ResponseEntity<PatientModel> findByDni(@PathVariable String dni) {
+        PatientModel patient = service.findByDni(dni);
         if (patient != null) {
             return ResponseEntity.ok(patient);
         } else {
             return ResponseEntity.notFound().build();
         }
     }
+    
 
     
 
