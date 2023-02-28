@@ -20,8 +20,8 @@ public class ProfileService {
         return repository.findAll();
     }
 
-    public ProfileModel getOne(Long idProfile) {
-        return null;
+    public ProfileModel findById(Long idProfile) {
+        return repository.findById(idProfile).orElse(null);
     }
 
     // public PatientModel getOne(String dni) {
@@ -33,4 +33,6 @@ public class ProfileService {
         ProfileModel profileModelSaved = repository.save(profileModel);
         return profileModelSaved;
     }
+
+ 
 }

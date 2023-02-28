@@ -31,8 +31,13 @@ public class ProfileController {
     }
 
     @GetMapping("/{idProfile}")
-    public ProfileModel listOne(@PathVariable Long idProfile) {
-        return service.getOne(idProfile);
+    public ResponseEntity<ProfileModel> findById(@PathVariable Long idProfile) {
+        ProfileModel profile = service.findById(idProfile);
+        if (profile != null) {
+            return ResponseEntity.ok(profile);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
 
     }
 

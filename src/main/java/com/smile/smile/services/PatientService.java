@@ -21,7 +21,7 @@ public class PatientService {
     }
 
     public PatientModel getOne(String dni) {
-        return repository.findByDni(dni);
+        return repository.findByDni(dni).orElse(null);
 
     }
 
