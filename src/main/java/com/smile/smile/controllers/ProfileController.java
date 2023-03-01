@@ -85,15 +85,16 @@ public class ProfileController {
      * }
      */
 
-    @PutMapping(path = "/idProfile")
-    public ResponseEntity<?> update(@RequestBody ProfileModel newProfile,
-            @PathVariable(value = "idProfile") Long idProfile) {
-        service.update(newProfile, idProfile);
+    // @PutMapping(path = "/idProfile")
+    // public ResponseEntity<?> update(@RequestBody ProfileModel newProfile,
+    // @PathVariable(value = "idProfile") Long idProfile) {
+    // service.update(newProfile, idProfile);
 
-        return null;
-    }
+    // return null;
+    // }
     @DeleteMapping("/{idpatient}")
     public List<ProfileModel> delete(@PathVariable long idpatient) {
-        return service.delete(idpatient);}
+        return service.delete(idpatient);
+    }
 
 }
