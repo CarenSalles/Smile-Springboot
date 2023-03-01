@@ -1,6 +1,5 @@
 package com.smile.smile.model;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,7 +24,6 @@ public class TreatmentModel {
     @JoinColumn(name = "dni")
 
     private PatientModel patient;
-    
 
     public TreatmentModel() {
     }

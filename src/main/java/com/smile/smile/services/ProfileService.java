@@ -1,6 +1,7 @@
 package com.smile.smile.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -21,7 +22,8 @@ public class ProfileService {
     }
 
     public ProfileModel getOne(Long idProfile) {
-        return null;
+        ProfileModel profile = repository.findById(idProfile).orElseThrow();
+        return profile;
     }
 
     // public PatientModel getOne(String dni) {
@@ -32,5 +34,10 @@ public class ProfileService {
     public ProfileModel save(ProfileModel profileModel) {
         ProfileModel profileModelSaved = repository.save(profileModel);
         return profileModelSaved;
+    }
+
+    public ProfileModel update(ProfileModel newData, Long id) {
+        ProfileModel currentProfile = this.getOne(id);
+        return null;
     }
 }
