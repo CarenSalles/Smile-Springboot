@@ -31,9 +31,16 @@ public class TreatmentController {
     }
 
     @GetMapping("/{idTreatment}")
-    public TreatmentModel listOne(@PathVariable Long idTreatment) {
-        return service.getOne(idTreatment);
+    public ResponseEntity<TreatmentModel> findById(@PathVariable Long idTreatment) {
+        TreatmentModel treatmentModel = service.findById(idTreatment);
+        // return service.findById(idTreatment);
+        if (treatmentModel != null) {
+            return ResponseEntity.ok(treatmentModel);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
+    
 
     @PostMapping(value = "")
     @ResponseStatus(value = HttpStatus.CREATED)

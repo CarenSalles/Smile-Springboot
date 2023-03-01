@@ -20,8 +20,8 @@ public class TreatmentService {
         return repository.findAll();
     }
 
-    public TreatmentModel getOne(Long idTreatment) {
-        return repository.findById(idTreatment);
+    public TreatmentModel findById(Long idTreatment) {
+        return repository.findById(idTreatment).orElse(null);
     }
 
     public TreatmentModel save(TreatmentModel treatmentModel) {
