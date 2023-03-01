@@ -1,19 +1,19 @@
 package com.smile.smile.controllers;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.ModelMap;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
+
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
-import java.util.Optional;
+
 
 import org.springframework.http.HttpStatus;
 
@@ -57,14 +57,11 @@ public class PatientController {
         } catch (Exception e) {
             return ResponseEntity.status(500).body("Error");
         }
-<<<<<<< HEAD
-=======
     }
     @DeleteMapping("/{dni}")
     public List<PatientModel> delete(@PathVariable String dni) {
         return service.delete(dni);}
 
->>>>>>> 51d4a7c8e7714d764d02ab6b257b5f6bd94b9ee4
 
     }
-}
+

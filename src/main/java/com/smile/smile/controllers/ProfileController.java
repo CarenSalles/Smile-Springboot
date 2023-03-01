@@ -58,6 +58,7 @@ public class ProfileController {
         } catch (Exception e) {
             return ResponseEntity.status(500).body("Error");
         }
+    }
 
     /*
      * @PutMapping("/{idProfile}") // Abreviatura de RequestMapping para dicir que
