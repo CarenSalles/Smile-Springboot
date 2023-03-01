@@ -20,17 +20,21 @@ public class ProfileService {
         return repository.findAll();
     }
 
-    public ProfileModel getOne(Long idProfile) {
-        return null;
+    public ProfileModel findById(Long idProfile) {
+        return repository.findById(idProfile).orElse(null);
     }
 
-    // public PatientModel getOne(String dni) {
-    // return repository.findByDni(dni);
-
-    // }
+   
 
     public ProfileModel save(ProfileModel profileModel) {
         ProfileModel profileModelSaved = repository.save(profileModel);
         return profileModelSaved;
     }
+    public List <ProfileModel> delete(long idProfile) {
+
+        ProfileModel profileToDelete = repository.findById(idProfile).orElse(null);
+        repository.delete(profileToDelete);
+        return repository.findAll();
+
+}
 }

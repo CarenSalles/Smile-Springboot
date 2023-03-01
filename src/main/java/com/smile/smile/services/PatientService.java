@@ -20,8 +20,8 @@ public class PatientService {
         return repository.findAll();
     }
 
-    public PatientModel getOne(String dni) {
-        return repository.findByDni(dni);
+    public PatientModel findByDni(String dni) {
+        return repository.findByDni(dni).orElse(null);
 
     }
 
@@ -29,4 +29,9 @@ public class PatientService {
         PatientModel patientModelSaved = repository.save(patientModel);
         return patientModelSaved;
     }
-}
+    public List <PatientModel> delete(String dni) {
+
+        PatientModel patientToDelete = repository.findByDni(dni).orElse(null);
+        repository.delete(patientToDelete);
+        return repository.findAll();
+}}

@@ -25,5 +25,9 @@ public class PatientModel {
     public void setDniPatient(String dni) {
         this.dni = dni;
     }
+    
+    public PatientModel orElse(Object object) {
+        return null;
+    }
 
 }
