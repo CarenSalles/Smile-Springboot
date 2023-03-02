@@ -1,7 +1,6 @@
 package com.smile.smile.services;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -28,6 +27,18 @@ public class ProfileService {
     public ProfileModel save(ProfileModel profileModel) {
         ProfileModel profileModelSaved = repository.save(profileModel);
         return profileModelSaved;
+    }
+
+    public ProfileModel update(ProfileModel profileModel, Long id) {
+        ProfileModel profileModelCurrent = repository.findById(id).orElseThrow();
+
+        profileModelCurrent.setName(profileModel.getName());
+        profileModelCurrent.setSurname(profileModel.getSurname());
+        profileModelCurrent.setPhoneNumber(profileModel.getPhoneNumber());
+        profileModelCurrent.setAdress(profileModel.getAdress());
+        profileModelCurrent.setCity(profileModel.getCity());
+
+        return repository.save(profileModelCurrent);
     }
 
     public List<ProfileModel> delete(long idProfile) {
