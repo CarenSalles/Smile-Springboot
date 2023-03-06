@@ -1,14 +1,10 @@
 package com.smile.smile.controllers;
 
 import java.util.List;
-import java.util.Optional;
+
 
 import com.smile.smile.services.ProfileService;
 
-import ch.qos.logback.core.joran.util.beans.BeanUtil;
-
-import org.springframework.beans.BeanUtils;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
