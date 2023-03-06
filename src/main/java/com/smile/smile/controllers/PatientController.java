@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
-
 import org.springframework.http.HttpStatus;
 
 import com.smile.smile.model.PatientModel;
 import com.smile.smile.services.PatientService;
+import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController
 @RequestMapping(path = "/api/patients")
@@ -44,9 +44,6 @@ public class PatientController {
             return ResponseEntity.notFound().build();
         }
     }
-    
-
-    
 
     @PostMapping(value = "")
     @ResponseStatus(value = HttpStatus.CREATED)
@@ -58,10 +55,20 @@ public class PatientController {
             return ResponseEntity.status(500).body("Error");
         }
     }
-    @DeleteMapping("/{dni}")
-    public List<PatientModel> delete(@PathVariable String dni) {
-        return service.delete(dni);}
 
+    @PutMapping(path = "/{dniPatient}")
+    public ResponseEntity<?> update(@RequestBody PatientModel newPatient,
+            @PathVariable(value = "dniPatient") String dniPatient) {
+
+        PatientModel patient = service.update(newPatient, dniPatient);
+
+        return ResponseEntity.ok().body(patient);
 
     }
 
+    @DeleteMapping("/{dni}")
+    public List<PatientModel> delete(@PathVariable String dni) {
+        return service.delete(dni);
+    }
+
+}

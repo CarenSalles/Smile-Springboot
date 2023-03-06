@@ -29,9 +29,18 @@ public class PatientService {
         PatientModel patientModelSaved = repository.save(patientModel);
         return patientModelSaved;
     }
-    public List <PatientModel> delete(String dni) {
+
+    public PatientModel update(PatientModel patientModel, String dni) {
+        PatientModel patientModelCurrent = repository.findByDni(dni).orElseThrow();
+
+        patientModelCurrent.setDniPatient(patientModel.getDniPatient());
+        return repository.save(patientModelCurrent);
+    }
+
+    public List<PatientModel> delete(String dni) {
 
         PatientModel patientToDelete = repository.findByDni(dni).orElse(null);
         repository.delete(patientToDelete);
         return repository.findAll();
-}}
+    }
+}

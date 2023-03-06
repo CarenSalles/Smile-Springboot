@@ -29,4 +29,19 @@ public class TreatmentService {
         return treatmentModelSaved;
     }
 
+    public TreatmentModel update(TreatmentModel treatmentModel, Long id) {
+        TreatmentModel treatmentModelCurrent = repository.findById(id).orElseThrow();
+
+        treatmentModelCurrent.setPatient(treatmentModel.getPatient());
+
+        return repository.save(treatmentModelCurrent);
+
+    }
+
+    public List<TreatmentModel> delete(long id__treatment) {
+        TreatmentModel treatmentToDelete = repository.findById(id__treatment).orElse(null);
+        repository.delete(treatmentToDelete);
+        return repository.findAll();
+    }
+
 }
