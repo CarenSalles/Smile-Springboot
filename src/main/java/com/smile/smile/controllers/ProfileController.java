@@ -80,7 +80,7 @@ public class ProfileController {
      * }
      */
 
-    @PutMapping(path = "/idProfile")
+    @PutMapping(path = "/{idProfile}")
     public ResponseEntity<?> update(@RequestBody ProfileModel newProfile,
             @PathVariable(value = "idProfile") Long idProfile) {
 
