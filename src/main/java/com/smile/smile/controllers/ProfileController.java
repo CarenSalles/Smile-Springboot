@@ -1,10 +1,6 @@
 package com.smile.smile.controllers;
 
 import java.util.List;
-<<<<<<< HEAD
-
-=======
->>>>>>> 7fc2a3316dc06c502e046a496259b0021608b7a3
 
 import com.smile.smile.services.ProfileService;
 
